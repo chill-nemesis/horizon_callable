@@ -7,14 +7,15 @@ include(HorizonCommon)
 include_directories(include/)
 
 set(HEADER
-        )
+        include/callable/Job.hpp
+        include/callable/CallbackManager.hpp)
 
 set(SOURCE
-        )
+        source/CallbackManager.cpp)
 
 set(HORIZON_CALLABLE_COMPILE_SOURCE ${HEADER} ${SOURCE})
 
 
 add_library(horizon_callable ${HORIZON_CALLABLE_COMPILE_SOURCE})
-target_link_libraries(horizon_callable )
+target_link_libraries(horizon_callable horizon_preprocessor)
 target_include_directories(horizon_callable PUBLIC include/)
