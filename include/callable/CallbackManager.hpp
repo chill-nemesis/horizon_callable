@@ -217,7 +217,8 @@ namespace HORIZON::CALLABLE
             _callbacks.emplace_back(std::forward<Callback>(callback), handle.GetIdentifier());
 
             // move the handle to the caller!
-            return std::move(handle);
+            // NOTE: do not use std::move here because of copy elision (https://stackoverflow.com/questions/19267408/why-does-stdmove-prevent-rvo)
+            return handle;
         }
 
         /*!
