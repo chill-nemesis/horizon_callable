@@ -18,6 +18,7 @@
 #include <memory>
 #include <utility>
 #include <cassert>
+#include <stdexcept>
 
 namespace HORIZON::CALLABLE
 {
