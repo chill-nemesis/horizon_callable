@@ -12,16 +12,17 @@
 #include "callable/CallbackManager.hpp"
 
 using namespace HORIZON::CALLABLE;
+using namespace HORIZON::CALLABLE::INTERNAL;
 
-__BaseCallbackManager::__BaseCallbackManager() :
+BaseCallbackManager::BaseCallbackManager() :
         _handleIdentifier()
 { }
 
-void __BaseCallbackManager::Unregister(CallbackHandle& handle) noexcept
+void BaseCallbackManager::Unregister(CallbackHandle& handle) noexcept
 { handle.Unregister(); }
 
-CallbackHandle __BaseCallbackManager::GetNextHandle() noexcept
-{ return std::move(CallbackHandle(_handleIdentifier++, shared_from_this())); }
+CallbackHandle BaseCallbackManager::GetNextHandle() noexcept
+{ return CallbackHandle(_handleIdentifier++, shared_from_this()); }
 
 
 CallbackHandle::~CallbackHandle()

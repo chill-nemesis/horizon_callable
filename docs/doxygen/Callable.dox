@@ -1,0 +1,19 @@
+/*!
+ * @defgroup group_module_callable Callable
+ * @ingroup group_horizon
+ * @brief This module provides methods to call and run methods in parallel and manage their results across multiple threads.
+ *
+ * @details This module is providing advanced control over task and task-result encapsulation. It provides a layer of abstraction for advanced function calls
+ * (e.g. Functions as parameters or callbacks).
+ * In addition, the callable module is designed with parallelism in mind - in fact, this module is the basis of the @ref group_module_parallel - and
+ * provides std::future-like result-handling behaviour.
+ */
+
+/*!
+ * @ingroup group_module_callable
+ *
+ * @details The namespace of the callable module.
+ */
+namespace HORIZON::CALLABLE
+{
+};

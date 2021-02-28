@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(horizon_callable VERSION 0.0.0 LANGUAGES CXX C)
 
-include(HorizonCommon)
-
-
-include_directories(include/)
-
+# set dependent source files
 set(HEADER
         include/callable/Job.hpp
         include/callable/CallbackManager.hpp)
@@ -13,9 +9,6 @@ set(HEADER
 set(SOURCE
         source/CallbackManager.cpp)
 
-set(HORIZON_CALLABLE_COMPILE_SOURCE ${HEADER} ${SOURCE})
+MakeHorizonModule(COMPILE_SOURCE ${HEADER} ${SOURCE}
+        PUBLIC_DEPENDENCIES horizon_preprocessor)
 
-
-add_library(horizon_callable ${HORIZON_CALLABLE_COMPILE_SOURCE})
-target_link_libraries(horizon_callable horizon_preprocessor)
-target_include_directories(horizon_callable PUBLIC include/)
