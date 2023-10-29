@@ -301,7 +301,7 @@ namespace HORIZON::CALLABLE
 	{
 	public:
 		template<class Function>
-		friend std::shared_ptr<Job<std::result_of_t<Function && ()>>> make_job(Function&& function);
+		friend std::shared_ptr<Job<std::invoke_result_t<Function>>> make_job(Function&& function);
 
 
 	private:
@@ -403,7 +403,7 @@ namespace HORIZON::CALLABLE
 	{
 	public:
 		template<class Function>
-		friend std::shared_ptr<Job<std::result_of_t<Function && ()>>> make_job(Function&& function);
+		friend std::shared_ptr<Job<std::invoke_result_t<Function>>> make_job(Function&& function);
 
 	private:
 		struct PassKey
@@ -480,10 +480,9 @@ namespace HORIZON::CALLABLE
 	 * @note The job is not automatically started or queued into a threadpool!
 	 */
 	template<class Function>
-	std::shared_ptr<Job<std::result_of_t<Function && ()>>> make_job(Function&& function)
+	std::shared_ptr<Job<std::invoke_result_t<Function>>> make_job(Function&& function)
 	{
-		// this might make problems with msvc?
-		using Result = std::result_of_t<Function && ()>;
+		using Result = std::invoke_result_t<Function>;
 
 		// TODO: check task validity
 		// TODO: launch policy? immediately schedule to thread pool?
