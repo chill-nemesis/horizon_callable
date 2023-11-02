@@ -15,11 +15,12 @@
 #include <algorithm>
 #include <cassert>
 #include <functional>
+#include <horizon/preprocessor/Class.hpp>
 #include <memory>
-#include <preprocessor/Class.hpp>
 #include <stdexcept>
 #include <utility>
 #include <vector>
+
 
 namespace HORIZON::CALLABLE
 {

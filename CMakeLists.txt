@@ -3,8 +3,8 @@ project(horizon_callable VERSION 0.0.0 LANGUAGES CXX C)
 
 # set dependent source files
 set(HEADER
-        include/callable/Job.hpp
-        include/callable/CallbackManager.hpp)
+        include/horizon/callable/Job.hpp
+        include/horizon/callable/CallbackManager.hpp)
 
 set(SOURCE
         source/CallbackManager.cpp)

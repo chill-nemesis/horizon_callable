@@ -13,7 +13,7 @@
 
 #include <functional>
 #include <future>
-#include <preprocessor/Class.hpp>
+#include <horizon/preprocessor/Class.hpp>
 
 namespace HORIZON::CALLABLE
 {
