@@ -10,5 +10,5 @@ set(SOURCE
         source/CallbackManager.cpp)
 
 MakeHorizonModule(COMPILE_SOURCE ${HEADER} ${SOURCE}
-        PUBLIC_DEPENDENCIES horizon_preprocessor)
+        PUBLIC_DEPENDENCIES horizon::preprocessor)
 
